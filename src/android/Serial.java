@@ -278,7 +278,7 @@ public class Serial extends CordovaPlugin {
 	 * @param callbackContext the cordova {@link CallbackContext}
 	 */
 	private void openSerial(final JSONObject opts, final CallbackContext callbackContext) {
-		cordova.getThreadPool().execute(new Runnable() {
+		/*cordova.getThreadPool().execute(new Runnable() {
 			public void run() {
 				UsbDeviceConnection connection = manager.openDevice(driver.getDevice());
 				if (connection != null) {
@@ -320,7 +320,7 @@ public class Serial extends CordovaPlugin {
 				}
 				onDeviceStateChange();
 			}
-		});
+		});*/
 	}
 
 	/**
