@@ -297,6 +297,8 @@ public class Serial extends CordovaPlugin {
 
 						port.open(connection);
 						port.setParameters(baudRate, dataBits, stopBits, parity);
+						port.setDTR(true);
+						port.setRTS(true);
 						if (setDTR) port.setDTR(true);
 						if (setRTS) port.setRTS(true);
 					}
