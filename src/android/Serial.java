@@ -484,8 +484,14 @@ public class Serial extends CordovaPlugin {
 	private void startIoManager() {
 		if (driver != null) {
 			Log.i(TAG, "Starting io manager.");
+			try {
 			mSerialIoManager = new SerialInputOutputManager(port, mListener);
 			mExecutor.submit(mSerialIoManager);
+		} catch (NullPointerException e) {
+            // Handle the exception here, e.g., log it or show an error message
+			Log.i(TAG, "Serial error."+e.printStackTrace());
+            e.printStackTrace();
+        }
 		}
 	}
 
